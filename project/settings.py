@@ -25,7 +25,7 @@ SECRET_KEY = 'w11u1ds^=ouo!u0v4t9z0ao9!b&hzlmd0s_wwf-jcbj9q15%im'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     #myApps
     'Home',
     'Categories',
@@ -166,9 +166,10 @@ USE_TZ = False
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "/home/mohammadalqaisy/project/static"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
+    #'/var/www/static/',
 ]
 
 MEDIA_URL = '/media/'
