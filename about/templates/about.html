@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block body %}
+		<title>Digital Team  |  About us</title>
+			
+						<div class="col-md-9 text-left menu-1"  >
+							<ul>
+								<li><a href="/" style="font-size: 15px;">الرئيسية</a></li>
+								<li class="has-dropdown">
+									<a href="/Categories/" style="font-size: 15px;">المجالات</a>
+									{% comment %} <ul class="dropdown">
+										{% for category in categories %}
+										<li><a href="/Categories/{{category.slug}}/"><br style="font-size: 12px; float:right;">{{category}}
+										</pr></a></li>
+										{% endfor %}
+									</ul> {% endcomment %}
+								</li>
+								<li><a href="/Events/" style="font-size: 15px;">الفعاليات</a></li>
+								<li class="active"><a href="/About/" style="font-size: 15px;">من نحن</a></li>
+								<!--<li class="btn-cta"><a href="#"><span>Free Trial</span></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url({{one_cover.cover.url}});">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+				   				<div class="slider-text-inner text-center" style="padding: 7em;">
+				   					<h1>من نحـن</h1>
+				   					<h2><span><a href="/">الرئيسية</a> | من نحـن</span></h2>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+
+
+{% for i in about %}
+		<div id="colorlib-about" class="colorlib-light-grey" style="padding:112px 15px 0px 15px;">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-8 col-md-offset-2 row-pb-md animate-box">
+						<div class="video colorlib-video" style="background-image: url({{i.video_cover.url}});">
+							<a href="{{i.video}}" class="popup-vimeo"><i class="icon-play3"></i></a>
+							<div class="overlay"></div>
+						</div>
+					</div>
+					<div class="col-md-10 col-md-offset-1 text-center animate-box"style="margin-top:-30px">
+						<div class="about-wrap">
+							<div class="heading-2">
+								{{i.title|safe}}
+								
+								{{i.main_graph|safe}}
+						</div>
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-md-4 animate-box" style="float:right;">
+						{{i.graph_1|safe}}
+					</div>
+					<div class="col-md-4 animate-box" style="float:right;">
+						{{i.graph_2|safe}}
+					</div>
+					<div class="col-md-4 animate-box" style="float:right;">
+						{{i.graph_3|safe}}
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+{% endfor %}
+		{% comment %} <div class="colorlib-trainers">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Our Experienced Professor</h2>
+						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(images/person1.jpg)"></div>
+							<div class="desc">
+								<h3>Olivia Young</h3>
+								<span>Teacher</span>
+							</div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
+							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(images/person2.jpg)"></div>
+							<div class="desc">
+								<h3>Daniel Anderson</h3>
+								<span>Professor</span>
+							</div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
+							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(images/person3.jpg)"></div>
+							<div class="desc">
+								<h3>David Brook</h3>
+								<span>Teacher</span>
+							</div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
+							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(images/person4.jpg)"></div>
+							<div class="desc">
+								<h3>Brigeth Smith</h3>
+								<span>Teacher</span>
+							</div>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia</p>
+							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> {% endcomment %}
+{% endblock body %}

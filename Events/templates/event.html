@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block body %}
+		<title>Digital Team  |  Events</title>
+			
+						<div class="col-md-9 text-left menu-1">
+							<ul>
+								<li><a href="/" style="font-size: 15px;">الرئيسية</a></li>
+								<li class="has-dropdown" >
+									<a href="/Categories/" style="font-size: 15px;">المجالات</a>
+									{% comment %} <ul class="dropdown">
+										{% for category in categories %}
+										<li><a href="/Categories/{{category.slug}}/" style="font-size: 12px;float:right;">{{category}}</a></li>
+										{% endfor %}
+									</ul> {% endcomment %}
+								</li>
+								<li class="active"><a href="/Events/" style="font-size: 15px;">الفعاليات</a></li>
+								<li><a href="/About/" style="font-size: 15px;">من نحن</a></li>
+								<!--<li class="btn-cta"><a href="#"><span>Free Trial</span></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url({{one_cover.cover.url}});">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+				   		<div class="row">
+				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+				   				<div class="slider-text-inner text-center"style="padding: 7em;">
+				   					<h1>الفعاليات</h1>
+				   					<h2><span><a href="/">الرئيسية</a> | الفعاليات</span></h2>
+				   				</div>
+							</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		
+		<div class="colorlib-event">
+			<div class="container">
+			<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>فعالياتنا ومشاركاتنا</h2>
+						<p style="font-size: 18px;">انما يستدل على عقل المرء وخلقه بعمله</p>
+					</div>
+				</div>
+				<div class="row">
+				{% for i in Events reversed %}
+							<div class="col-md-12 animate-box">
+						<div class="event-entry">
+							<div class="desc">
+								<p class="meta"><span class="day">{{i.day}}</span><span class="month"style="font-size: 15px;">{{i.month}}</span></p>
+								<h2>{{i.title}}</h2>
+								<p class="organizer"><span>منظم من قبل:</span> <span>{{i.Organized_by}}</span></p>
+							</div>
+							<div class="row row-pb-md">
+							
+							<div class="classes">
+								<div class="classes-img col-md-6" style="background-image: url({{i.cover.url}})";>
+							</div>
+							<div class="col-md-6">
+							<hr>
+											{{ i.body|safe }}
+											</hr></div>
+										</div></div>
+							<div class="location">
+								<span class="icon"><i class="icon-map"></i></span>
+								<p class="icon-location4">  {{ i.location}}</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+					
+					{% comment %} <div class="col-md-4 animate-box">
+						<div class="event-entry">
+							<div class="desc">
+								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
+								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
+								<h2><a href="event.html">Practice Workshop 2018</a></h2>
+							</div>
+							<div class="location">
+								<span class="icon"><i class="icon-map"></i></span>
+								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 animate-box">
+						<div class="event-entry">
+							<div class="desc">
+								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
+								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
+								<h2><a href="event.html">We Held Free Training for Basic Programming</a></h2>
+							</div>
+							<div class="location">
+								<span class="icon"><i class="icon-map"></i></span>
+								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="event-entry">
+							<div class="desc">
+								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
+								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
+								<h2><a href="event.html">You're Invited 1st Anniversary of Eskwela</a></h2>
+							</div>
+							<div class="location">
+								<span class="icon"><i class="icon-map"></i></span>
+								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="event-entry">
+							<div class="desc">
+								<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
+								<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
+								<h2><a href="event.html">Practice Workshop 2018</a></h2>
+							</div>
+							<div class="location">
+								<span class="icon"><i class="icon-map"></i></span>
+								<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+							</div>
+						</div>
+					</div> {% endcomment %}
+				</div>
+			</div>
+		</div>
+	
+{% endblock body %}

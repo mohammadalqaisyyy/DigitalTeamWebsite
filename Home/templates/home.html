@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+
+{% block body %}
+		<title>Digital Team</title>
+		
+						<div class="col-md-9 text-left menu-1"  >
+							<ul>
+								<li class="active" ><a href="/" style="font-size: 15px;">الرئيسية</a></li>
+								<li class="has-dropdown">
+									<a href="/Categories/" style="font-size: 15px;">المجالات</a>
+									{% comment %} <ul class="dropdown">
+										{% for category in categories %}
+										<li><a href="/Categories/{{category.slug}}/"><br style="font-size: 12px; float:right;">{{category}}
+										</pr></a></li>
+										{% endfor %}
+									</ul> {% endcomment %}
+								</li>
+								<li><a href="/Events/" style="font-size: 15px;">الفعاليات</a></li>
+								<li><a href="/About/" style="font-size: 15px;">من نحن</a></li>
+								<!--<li class="btn-cta"><a href="#"><span>Free Trial</span></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+
+				{% for cover in coveres %}
+			   	<li style="background-image: url({{cover.cover.url}});">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center" style="padding: 7em;">
+				   					<h1>{{cover.title}}</h1>
+				   					{% comment %} <p><a href="#" class="btn btn-primary btn-lg btn-learn">Register Now</a></p> {% endcomment %}
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+				{% endfor %}
+
+			  	</ul>
+		  	</div>
+		</aside>
+		
+		<div id="colorlib-intro">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-8" style=" padding-bottom : 100px; ">
+						<div class="about-desc animate-box">
+							 {{welcome.main_graph | safe}}
+							<div class="fancy-collapse-panel">
+	                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+						 <div class="panel panel-default">
+	                         <div class="panel-heading" role="tab" id="headingOne">
+	                             <h4 class="panel-title">
+	                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size:18px;">{{welcome.title_1 | safe}}
+	                                 </a>
+	                             </h4>
+	                         </div>
+	                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	                             <div class="panel-body">
+
+	                                {{welcome.graph_1 | safe}}
+	                             
+								 </div>
+	                         </div>
+	                     </div>
+	                     <div class="panel panel-default">
+	                         <div class="panel-heading" role="tab" id="headingTwo">
+	                             <h4 class="panel-title">
+	                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size:18px;">{{welcome.title_2 | safe}}
+	                                 </a>
+	                             </h4>
+	                         </div>
+	                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	                             <div class="panel-body">
+								 
+									{{welcome.graph_2 | safe}}
+
+	                             </div>
+	                         </div>
+	                     </div>
+	                     <div class="panel panel-default">
+	                         <div class="panel-heading" role="tab" id="headingThree">
+	                             <h4 class="panel-title">
+	                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-size:18px;">{{welcome.title_3 | safe}}
+	                                 </a>
+	                             </h4>
+	                         </div>
+	                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+	                             <div class="panel-body">
+
+								 {{welcome.graph_3 | safe}}
+	                                 
+								</div>
+	                         </div>
+	                     </div>
+	                  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 intro-wrap">
+						<div class="intro-flex">
+							<div class="one-third color-1 animate-box">
+								<span class="icon"><i class="flaticon-market"></i></span>
+								<div class="desc">
+									<h3>مجالات هندسة الحاسوب وتكنولوجيا المعلومات</h3>
+									{% comment %} <p><a href="#" class="view-more">View More</a></p> {% endcomment %}
+								</div>
+							</div>
+							<div class="one-third color-2 animate-box">
+								<span class="icon"><i class="flaticon-open-book"></i></span>
+								<div class="desc">
+									<h3>أفضل الدورات والمصادر</h3>
+									{% comment %} <p><a href="#" class="view-more">View More</a></p> {% endcomment %}
+								</div>
+							</div>
+							<div class="one-third color-3 animate-box">
+								<div class="desc">
+									<h3>أول موقع عربي لمجالات الحاسوب</h3>
+									{% comment %} <p><a href="#" class="view-more">View More</a></p> {% endcomment %}
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		
+{% comment %} 
+		<div id="colorlib-services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-books"></i>
+							</span>
+							<div class="desc">
+								<h3>Professional Courses</h3>
+								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-professor"></i>
+							</span>
+							<div class="desc">
+								<h3>Experienced Instructor</h3>
+								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-book"></i>
+							</span>
+							<div class="desc">
+								<h3>Practical Training</h3>
+								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-diploma"></i>
+							</span>
+							<div class="desc">
+								<h3>Validated Certificate</h3>
+								<p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div> {% endcomment %}
+		{% comment %} 
+		<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-book"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="1539" data-speed="5000" data-refresh-interval="50"></span>
+										<span class="colorlib-counter-label">Courses</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-student"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="3653" data-speed="5000" data-refresh-interval="50"></span>
+										<span class="colorlib-counter-label">Students</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-professor"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="2300" data-speed="5000" data-refresh-interval="50"></span>
+										<span class="colorlib-counter-label">Teachers</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-earth-globe"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="200" data-speed="5000" data-refresh-interval="50"></span>
+										<span class="colorlib-counter-label">Countries</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> {% endcomment %}
+
+		<div class="colorlib-classes colorlib-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<a href="/Categories/"><h2>آخر المجالات</h2></a>
+						<p>مجالات هندسة الحاسوب وتكنولوجيا المعلومات وأقسامها</p>
+					</div>
+				</div>
+				<div class="row">
+				{% for category in categories_last%}
+					<div class="col-md-4 animate-box" style="float:right; min-width:275px;">
+						<div class="classes">
+						<a href="Categories/{{category.slug}}">
+							<div class="classes-img" style="background-image: url({{category.cover.url}});">
+							</div></a>
+							<div class="desc">
+								<h3><a href="Categories/{{category.slug}}">{{category.title}}</a></h3>
+								<p>{{category.brief}}</p>
+								<p><a href="Categories/{{category.slug}}" class="btn-learn"><i class="icon-arrow-right3"></i> معرفة المزيد</a></p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+			</div>	
+		</div>
+{% comment %} 
+		<div id="colorlib-testimony" class="testimony-img" style="background-image: url(images/img_bg_2.jpg); direction: ltr;" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container" >
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box" >
+						<h2>What Are The Students Says</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="row animate-box">
+							<div class="owl-carousel1">
+								<div class="item">
+									<div class="testimony-slide">
+										<div class="testimony-wrap">
+											<blockquote>
+												<span>Sophia Foster</span>
+												<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+											</blockquote>
+											<div class="figure-img" style="background-image: url(images/person1.jpg);"></div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide">
+										<div class="testimony-wrap">
+											<blockquote>
+												<span>John Collins</span>
+												<p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+											</blockquote>
+											<div class="figure-img" style="background-image: url(images/person2.jpg);"></div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide">
+										<div class="testimony-wrap">
+											<blockquote>
+												<span>Adam Ross</span>
+												<p>Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+											</blockquote>
+											<div class="figure-img" style="background-image: url(images/person3.jpg);"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> {% endcomment %}
+
+
+		<div class="colorlib-event">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box" >
+						<a href="/Events/"><h2>فعالياتنا ومشاركاتنا</h2></a>
+						<p style="font-size: 18px;">انما يستدل على عقل المرء وخلقه بعمله</p>
+						{% comment %} <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name</p> {% endcomment %}
+					</div>
+				</div>
+				<div class="event-flex row-pb-sm">
+					<div class="half event-img animate-box" style="background-image: url(static/images/event2.jpg);">
+					</div>
+					<div class="half">
+						<div class="row">
+							{% for i in events %}
+							
+							<div class="col-md-12 animate-box" >
+								<div class="event-entry">
+									<div class="desc">
+										<p class="meta"><span class="day">{{i.day}}</span><span class="month"style="font-size: 15px;">{{i.month}}</span></p>
+										<a href="/Events/"><h2>{{i.title}}</h2></a>
+										<p class="organizer"><span>منظم من قبل:</span> <span>{{i.Organized_by}}</span></p>
+									</div>
+									<div class="location">
+										<span class="icon"><i class="icon-map"></i></span>
+										<p class="icon-location4">  {{ i.location}}</p>
+									</div>
+								</div>
+							</div>
+							
+							{% endfor %}
+							{% comment %} <div class="col-md-12 animate-box">
+								<div class="event-entry">
+									<div class="desc">
+										<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
+										<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
+										<h2><a href="event.html">You're Invited 1st Anniversary of Eskwela</a></h2>
+									</div>
+									<div class="location">
+										<span class="icon"><i class="icon-map"></i></span>
+										<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 animate-box">
+								<div class="event-entry">
+									<div class="desc">
+										<p class="meta"><span class="day">19</span><span class="month">Apr</span></p>
+										<p class="organizer"><span>Organized by:</span> <span>Noah Henderson</span></p>
+										<h2><a href="event.html">Practice Workshop 2018</a></h2>
+									</div>
+									<div class="location">
+										<span class="icon"><i class="icon-map"></i></span>
+										<p>291 South 21th Street, Suite 721 New York NY 10016</p>
+									</div>
+								</div>
+							</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+{% endblock body %}
